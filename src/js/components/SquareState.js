@@ -12,6 +12,7 @@ export default class SquareState extends React.Component {
 
       /*TODO: Make it pretty*/
       fontSize: '5em',
+      fontFamily: 'Raleway',
 
       userSelect: 'none',
       mozUserSelect: 'none',    /* Firefox all */
