@@ -22,7 +22,7 @@ export default class SquareState extends React.Component {
 
     return (
       <div style={style}>
-       X 
+        x
       </div>
     );
   }
