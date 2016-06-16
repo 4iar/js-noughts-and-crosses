@@ -11,7 +11,12 @@ export default class SquareState extends React.Component {
       textAlign: 'center',
 
       /*TODO: Make it pretty*/
-      fontSize: '5em'
+      fontSize: '5em',
+
+      userSelect: 'none',
+      mozUserSelect: 'none',    /* Firefox all */
+      msUserSelect: 'none',     /* IE 10+ */
+      webkitUserSelect: 'none',
     };
 
     return (
