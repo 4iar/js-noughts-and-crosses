@@ -6,7 +6,7 @@ export default class SquareState extends React.Component {
     var style = {
       /*Plonk the naught or cross in the middle of the square*/
       position: 'relative',
-      top: '50%',
+      top: '42%',
       transform: 'translateY(-50%)',
       textAlign: 'center',
 
