@@ -15,9 +15,9 @@ export default class SquareState extends React.Component {
       fontFamily: 'Raleway',
 
       userSelect: 'none',
-      mozUserSelect: 'none',    /* Firefox all */
+      MozUserSelect: 'none',    /* Firefox all */
       msUserSelect: 'none',     /* IE 10+ */
-      webkitUserSelect: 'none',
+      WebkitUserSelect: 'none',
     };
 
     return (
