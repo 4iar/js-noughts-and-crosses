@@ -33,7 +33,7 @@ export default class Square extends React.Component {
 
     return (
       <div style={style}>
-        <SquareState />
+        <SquareState state={this.props.grid[this.props.row][this.props.col]}/>
       </div>
     );
   }

@@ -7,7 +7,7 @@ export default class Layout extends React.Component {
   render() {
     return (
       <div>
-        <Grid />
+        <Grid grid={[['x', 'x', 'x'], ['o', 'o', 'o'], ['', '', '']]}/>
       </div>
     );
   }

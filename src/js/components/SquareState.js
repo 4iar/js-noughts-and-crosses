@@ -20,9 +20,15 @@ export default class SquareState extends React.Component {
       WebkitUserSelect: 'none',
     };
 
+    const playerCharacters = {
+      '': '\u00a0',  // hacky way to stop empty chars from breaking the grid
+      'x': 'x',
+      'o': 'o'
+    };
+
     return (
       <div style={style}>
-        x
+        {playerCharacters[this.props.state]}
       </div>
     );
   }
