@@ -7,15 +7,15 @@ import SquareState from './SquareState';
 export default class Square extends React.Component {
   render() {
     const borderStyleCol = {
-      '1': {borderLeft: 'none'},
-      '2': {},
-      '3': {borderRight: 'none'}
+      '0': {borderLeft: 'none'},
+      '1': {},
+      '2': {borderRight: 'none'}
     };
 
     const borderStyleRow = {
-      '1': {borderTop: 'none'},
-      '2': {},
-      '3': {borderBottom: 'none'}
+      '0': {borderTop: 'none'},
+      '1': {},
+      '2': {borderBottom: 'none'}
     };
 
     var style = {
