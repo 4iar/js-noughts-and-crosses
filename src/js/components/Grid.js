@@ -13,17 +13,17 @@ export default class Grid extends React.Component {
     
     return (
       <div style={style}>
-        <Square row='0' col='0' grid={this.props.grid}/>
-        <Square row='1' col='0' grid={this.props.grid}/>
-        <Square row='2' col='0' grid={this.props.grid}/>
+        <Square col='0' row='0' grid={this.props.grid}/>
+        <Square col='1' row='0' grid={this.props.grid}/>
+        <Square col='2' row='0' grid={this.props.grid}/>
         
-        <Square row='0' col='1' grid={this.props.grid}/>
-        <Square row='1' col='1' grid={this.props.grid}/>
-        <Square row='2' col='1' grid={this.props.grid}/>
+        <Square col='0' row='1' grid={this.props.grid}/>
+        <Square col='1' row='1' grid={this.props.grid}/>
+        <Square col='2' row='1' grid={this.props.grid}/>
         
-        <Square row='0' col='2' grid={this.props.grid}/>
-        <Square row='1' col='2' grid={this.props.grid}/>
-        <Square row='2' col='2' grid={this.props.grid}/>
+        <Square col='0' row='2' grid={this.props.grid}/>
+        <Square col='1' row='2' grid={this.props.grid}/>
+        <Square col='2' row='2' grid={this.props.grid}/>
       </div>
     );
   }
