@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 
 import SquareState from './SquareState';
-import playMove from '../actions/playMove';
+import { playMove } from '../actions/game';
 
 const getGrid = (state) => {
   return {
@@ -42,10 +42,8 @@ export default class Square extends React.Component {
     _.merge(style, borderStyleCol[col]);
     _.merge(style, borderStyleRow[row]);
 
-    const move = {player: 'x', position: {row, col}};
-    
     return (
-      <div style={style} onClick={this.props.playMove.bind(this, move)}>
+      <div style={style} onClick={this.props.playMove.bind(this, {row, col})}>
         <SquareState squareState={this.props.grid[row][col]}/>
       </div>
     );
