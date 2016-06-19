@@ -7,6 +7,9 @@ import SquareState from './SquareState';
 const getGrid = (state) => {
   return {
     grid: state.game.grid
+  };
+};
+
   }
 }
 
