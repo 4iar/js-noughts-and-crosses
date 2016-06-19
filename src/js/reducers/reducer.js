@@ -5,7 +5,7 @@ const initialState = {
       ['', '', '']]
 };
 
-export const movesReducer = (state = initialState, action) => {
+export const game = (state = initialState, action) => {
   switch (action.type) {
     case 'PLAY_MOVE':
       var newGrid = state.grid.slice();

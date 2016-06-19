@@ -6,7 +6,7 @@ import SquareState from './SquareState';
 
 const getGrid = (state) => {
   return {
-    grid: state.movesReducer.grid
+    grid: state.game.grid
   }
 }
 
