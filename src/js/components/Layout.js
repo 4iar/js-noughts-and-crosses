@@ -1,13 +1,13 @@
 import React from "react";
 
-import Grid from './Grid.js';
+import GameLogic from '../containers/GameLogic';
 
 
 export default class Layout extends React.Component {
   render() {
     return (
       <div>
-        <Grid />
+        <GameLogic />
       </div>
     );
   }
