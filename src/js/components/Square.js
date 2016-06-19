@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 
 import SquareState from './SquareState';
+import playMove from '../actions/playMove';
 
 const getGrid = (state) => {
   return {
@@ -10,10 +11,7 @@ const getGrid = (state) => {
   };
 };
 
-  }
-}
-
-@connect(getGrid, null, null, {withRef: true})
+@connect(getGrid, {playMove}, null, {withRef: true})
 export default class Square extends React.Component {
   render() {
     const row = this.props.row;
@@ -44,9 +42,11 @@ export default class Square extends React.Component {
     _.merge(style, borderStyleCol[col]);
     _.merge(style, borderStyleRow[row]);
 
+    const move = {player: 'x', position: {row, col}};
+    
     return (
-      <div style={style}>
-        <SquareState squareState={this.props.grid[col][row]}/>
+      <div style={style} onClick={this.props.playMove.bind(this, move)}>
+        <SquareState squareState={this.props.grid[row][col]}/>
       </div>
     );
   }
