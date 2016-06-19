@@ -1,9 +1,16 @@
 import React from 'react';
 import _ from 'lodash';
+import { connect } from 'react-redux';
 
 import SquareState from './SquareState';
 
+const getGrid = (state) => {
+  return {
+    grid: state.movesReducer.grid
+  }
+}
 
+@connect(getGrid, null, null, {withRef: true})
 export default class Square extends React.Component {
   render() {
     const row = this.props.row;
@@ -36,7 +43,7 @@ export default class Square extends React.Component {
 
     return (
       <div style={style}>
-        <SquareState state={this.props.grid[row][col]}/>
+        <SquareState squareState={this.props.grid[col][row]}/>
       </div>
     );
   }

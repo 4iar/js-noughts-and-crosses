@@ -3,6 +3,7 @@ import React from 'react';
 
 export default class SquareState extends React.Component {
   render() {
+
     var style = {
       /*Plonk the naught or cross in the middle of the square*/
       position: 'relative',
@@ -28,7 +29,7 @@ export default class SquareState extends React.Component {
 
     return (
       <div style={style}>
-        {playerCharacters[this.props.state]}
+        {playerCharacters[this.props.squareState]}
       </div>
     );
   }

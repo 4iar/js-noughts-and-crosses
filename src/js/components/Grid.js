@@ -13,17 +13,17 @@ export default class Grid extends React.Component {
     
     return (
       <div style={style}>
-        <Square col='0' row='0' grid={this.props.grid}/>
-        <Square col='1' row='0' grid={this.props.grid}/>
-        <Square col='2' row='0' grid={this.props.grid}/>
+        <Square col='0' row='0'/>
+        <Square col='1' row='0'/>
+        <Square col='2' row='0'/>
         
-        <Square col='0' row='1' grid={this.props.grid}/>
-        <Square col='1' row='1' grid={this.props.grid}/>
-        <Square col='2' row='1' grid={this.props.grid}/>
+        <Square col='0' row='1'/>
+        <Square col='1' row='1'/>
+        <Square col='2' row='1'/>
         
-        <Square col='0' row='2' grid={this.props.grid}/>
-        <Square col='1' row='2' grid={this.props.grid}/>
-        <Square col='2' row='2' grid={this.props.grid}/>
+        <Square col='0' row='2'/>
+        <Square col='1' row='2'/>
+        <Square col='2' row='2'/>
       </div>
     );
   }
