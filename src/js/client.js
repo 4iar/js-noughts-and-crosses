@@ -6,9 +6,10 @@ import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
 import Layout from "./components/Layout";
-import * as reducers from './reducers/reducer';
 
-const reducer = combineReducers(reducers);
+import game from './reducers/Game';
+
+const reducer = combineReducers({game});
 const store = createStore(reducer);
 
 const app = document.getElementById('app');
