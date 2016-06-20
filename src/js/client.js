@@ -16,7 +16,6 @@ const store = createStore(reducer);
 const app = document.getElementById('app');
 
 
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
