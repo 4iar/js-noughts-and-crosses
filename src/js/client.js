@@ -8,8 +8,9 @@ import { Provider } from "react-redux";
 import Layout from "./components/Layout";
 
 import game from './reducers/Game';
+import history from './reducers/History';
 
-const reducer = combineReducers({game});
+const reducer = combineReducers({game, history});
 const store = createStore(reducer);
 
 const app = document.getElementById('app');
