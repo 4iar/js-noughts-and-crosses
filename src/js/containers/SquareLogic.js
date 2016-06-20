@@ -8,6 +8,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import computeNextMove from '../computeNextMove';
 import Square from '../components/Square';
 import { playMove, startTurn, endTurn } from '../actions/game';
 
@@ -39,6 +40,7 @@ export default class SquareLogic extends React.Component {
     
     const playComputerTurn = () => {
       // call ai logic
+      playMove(computeNextMove(this.props.grid));
     };
     
     const checkAndHandleGameEnd = () => {
