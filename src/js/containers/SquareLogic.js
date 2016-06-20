@@ -23,7 +23,8 @@ export default class SquareLogic extends React.Component {
     const row = this.props.row;
     const col = this.props.col;
     const position = {row, col};
-    const squareState = this.props.game.grid[row][col];
+    const grid = this.props.game.grid;
+    const squareState = grid[row][col];
     const playMove = this.props.playMove;
     const turnsRemaining = this.props.game.turnsRemaining;
     const isPlayerTurn = this.props.game.playerTurn;
