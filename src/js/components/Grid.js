@@ -1,6 +1,6 @@
 import React from "react";
 
-import Square from './Square.js';
+import SquareLogic from '../containers/SquareLogic';
 
 
 export default class Grid extends React.Component {
@@ -13,17 +13,17 @@ export default class Grid extends React.Component {
     
     return (
       <div style={style}>
-        <Square col='0' row='0'/>
-        <Square col='1' row='0'/>
-        <Square col='2' row='0'/>
+        <SquareLogic col='0' row='0'/>
+        <SquareLogic col='1' row='0'/>
+        <SquareLogic col='2' row='0'/>
         
-        <Square col='0' row='1'/>
-        <Square col='1' row='1'/>
-        <Square col='2' row='1'/>
+        <SquareLogic col='0' row='1'/>
+        <SquareLogic col='1' row='1'/>
+        <SquareLogic col='2' row='1'/>
         
-        <Square col='0' row='2'/>
-        <Square col='1' row='2'/>
-        <Square col='2' row='2'/>
+        <SquareLogic col='0' row='2'/>
+        <SquareLogic col='1' row='2'/>
+        <SquareLogic col='2' row='2'/>
       </div>
     );
   }

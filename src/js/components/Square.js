@@ -1,21 +1,14 @@
 import React from 'react';
 import _ from 'lodash';
-import { connect } from 'react-redux';
 
 import SquareState from './SquareState';
-import { playMove } from '../actions/game';
 
-const getGrid = (state) => {
-  return {
-    grid: state.game.grid
-  };
-};
 
-@connect(getGrid, {playMove}, null, {withRef: true})
 export default class Square extends React.Component {
   render() {
-    const row = this.props.row;
-    const col = this.props.col;
+    const row = this.props.position.row;
+    const col = this.props.position.col;
+    const squareState = this.props.squareState;
     
     const borderStyleCol = {
       '0': {borderLeft: 'none'},
@@ -41,10 +34,10 @@ export default class Square extends React.Component {
 
     _.merge(style, borderStyleCol[col]);
     _.merge(style, borderStyleRow[row]);
-
+    
     return (
-      <div style={style} onClick={this.props.playMove.bind(this, {row, col})}>
-        <SquareState squareState={this.props.grid[row][col]}/>
+      <div style={style} onClick={this.props.handleClick}>
+        <SquareState squareState={squareState}/>
       </div>
     );
   }

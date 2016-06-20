@@ -11,3 +11,17 @@ export function setPlayer(player) {
     player
   }
 }
+
+export function startTurn() {
+  return {
+    type: 'START_TURN',
+    playerTurn: true
+  }
+}
+
+export function endTurn() {
+  return {
+    type: 'END_TURN',
+    playerTurn: false
+  }
+}
