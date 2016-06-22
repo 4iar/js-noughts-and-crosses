@@ -8,6 +8,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import checkIfWinner from '../checkIfWinner';
 import computeNextMove from '../computeNextMove';
 import Square from '../components/Square';
 import { playMove, startTurn, endTurn } from '../actions/game';
@@ -44,8 +45,13 @@ export default class SquareLogic extends React.Component {
     };
     
     const checkAndHandleGameEnd = () => {
+      
+      
       if (turnsRemaining === 0) {
-        // handle game end
+        return;
+      };
+      
+      if (checkIfWinner(grid)) {
       };
     };
 
