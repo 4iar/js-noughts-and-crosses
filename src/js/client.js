@@ -6,6 +6,8 @@ import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
 import Layout from "./components/Layout";
+import StartGame from "./containers/StartGame";
+import Game from "./containers/Game";
 
 import game from './reducers/Game';
 import history from './reducers/History';
@@ -20,6 +22,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={Layout}>
+        <IndexRoute component={StartGame} />
+        <Route path="/play" component={Game} />
       </Route>
     </Router>
   </Provider>,

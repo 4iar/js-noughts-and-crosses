@@ -13,14 +13,12 @@ export default class Stats extends React.Component {
     const count = this.props.count;
     
     var style = {
-      textAlign: 'center',
-      
       fontSize: '3em',
       fontFamily: 'Raleway',
     };
 
     return (
-      <div style={style}>
+      <div style={style} class='col-sm-6 col-sm-offset-3 text-center'>
         <p>{count.won} - {count.draw} - {count.lost}</p>
       </div>
     );
