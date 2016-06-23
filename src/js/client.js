@@ -18,7 +18,7 @@ const app = document.getElementById('app');
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory} routes={routes}>
+    <Router history={hashHistory} routes={routes(store)}>
     </Router>
   </Provider>,
   app);

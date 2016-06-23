@@ -1,5 +1,5 @@
 const initialState = {
-  player: 'x',
+  player: '',
   playerTurn: true,
   turnsRemaining: 9,
   grid:
