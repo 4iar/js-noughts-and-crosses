@@ -2,7 +2,7 @@ import React from "react";
 var Link = require("react-router").Link;
 import { connect } from "react-redux";
 
-import { setPlayer } from "../actions/game";
+import { setPlayer } from "../actions/Game";
 
 @connect(null, {setPlayer}, null, {withRef: true})
 export default class StartGame extends React.Component {

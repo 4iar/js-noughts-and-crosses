@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import checkIfWinner from '../checkIfWinner';
 import computeNextMove from '../computeNextMove';
 import Square from '../components/Square';
-import { playMove, startTurn, endTurn } from '../actions/game';
+import { playMove, startTurn, endTurn } from '../actions/Game';
 
 const getGrid = (state) => {
   return {

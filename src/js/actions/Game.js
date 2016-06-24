@@ -25,3 +25,9 @@ export function endTurn() {
     playerTurn: false
   }
 }
+
+export function reset() {
+  return {
+    type: 'RESET'
+  };
+};

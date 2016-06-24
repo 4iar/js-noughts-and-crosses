@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 
 import Grid from '../components/Grid';
-import { playMove } from '../actions/game';
+import { playMove } from '../actions/Game';
 
 const getGrid = (state) => {
   return {
