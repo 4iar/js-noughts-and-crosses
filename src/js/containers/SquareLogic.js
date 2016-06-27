@@ -39,20 +39,18 @@ export default class SquareLogic extends React.Component {
     const isValidMove = () => {
       return squareNotOccupied() && isPlayerTurn;
     };
-    
+
     const playComputerTurn = () => {
       // call ai logic
       // TODO: handle invalid moves? invalid moves cause the thing to decrement :(
       playComputerMove(computeNextMove(grid));
     };
-    
+
     const checkAndHandleGameEnd = () => {
-      
-      
       if (turnsRemaining === 0) {
         return;
       };
-      
+
       if (checkIfWinner(grid)) {
       };
     };

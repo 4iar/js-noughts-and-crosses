@@ -1,3 +1,5 @@
+// TODO: make the PLAY_{USER,COMPUTER}_MOVE actions DRY
+
 const initialState = {
   player: '',
   playerTurn: true,
