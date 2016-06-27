@@ -2,6 +2,8 @@
 
 const initialState = {
   player: '',
+  finished: false,
+  winner: '',
   playerTurn: true,
   turnsRemaining: 9,
   grid:
@@ -55,6 +57,11 @@ const game = (state = initialState, action) => {
     case 'END_TURN':
       return Object.assign({}, state, {
         playerTurn: false
+      });
+    case 'END_GAME':
+      return Object.assign({}, initialState, {
+        finished: true,
+        winner: action.winner
       });
     default:
       return state;

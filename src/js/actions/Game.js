@@ -38,3 +38,11 @@ export function reset() {
     type: 'RESET'
   };
 };
+
+export function endGame(winner) {
+  return {
+    type: 'END_GAME',
+    finished: true,
+    winner
+  }
+}

@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import checkIfWinner from '../checkIfWinner';
 import computeNextMove from '../computeNextMove';
 import Square from '../components/Square';
-import { playUserMove, playComputerMove, startTurn, endTurn } from '../actions/Game';
+import { endGame, playUserMove, playComputerMove, startTurn, endTurn } from '../actions/Game';
 
 const getGrid = (state) => {
   return {
@@ -19,7 +19,7 @@ const getGrid = (state) => {
   };
 };
 
-@connect(getGrid, {playUserMove, playComputerMove, startTurn, endTurn}, null, {withRef: true})
+@connect(getGrid, {endGame, playUserMove, playComputerMove, startTurn, endTurn}, null, {withRef: true})
 export default class SquareLogic extends React.Component {
   render() {
     const row = this.props.row;
@@ -29,15 +29,17 @@ export default class SquareLogic extends React.Component {
     const squareState = grid[row][col];
     const playUserMove = this.props.playUserMove;
     const playComputerMove = this.props.playComputerMove;
+    const endGame = this.props.endGame;
     const turnsRemaining = this.props.game.turnsRemaining;
     const isPlayerTurn = this.props.game.playerTurn;
+    const gameNotFinished = !this.props.game.finished;
 
     const squareNotOccupied = () => {
       return !squareState;
     };
 
     const isValidMove = () => {
-      return squareNotOccupied() && isPlayerTurn;
+      return squareNotOccupied() && isPlayerTurn && gameNotFinished;
     };
 
     const playComputerTurn = () => {
@@ -47,11 +49,11 @@ export default class SquareLogic extends React.Component {
     };
 
     const checkAndHandleGameEnd = () => {
-      if (turnsRemaining === 0) {
+      const winner = checkIfWinner(grid);
+      
+      if (turnsRemaining === 1 || winner) {
+        endGame(winner);
         return;
-      };
-
-      if (checkIfWinner(grid)) {
       };
     };
 
