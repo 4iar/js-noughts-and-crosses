@@ -56,7 +56,7 @@ export default class SquareLogic extends React.Component {
     };
 
     const handleClick = () => {
-      if (!isValidMove) {
+      if (!isValidMove()) {
         return;
       };
 
