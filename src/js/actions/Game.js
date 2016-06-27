@@ -1,6 +1,13 @@
-export function playMove(position) {
+export function playUserMove(position) {
   return {
-    type: 'PLAY_MOVE',
+    type: 'PLAY_USER_MOVE',
+    position // {row: '0', col: '1'}
+  }
+}
+
+export function playComputerMove(position) {
+  return {
+    type: 'PLAY_COMPUTER_MOVE',
     position // {row: '0', col: '1'}
   }
 }

@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import checkIfWinner from '../checkIfWinner';
 import computeNextMove from '../computeNextMove';
 import Square from '../components/Square';
-import { playMove, startTurn, endTurn } from '../actions/Game';
+import { playUserMove, playComputerMove, startTurn, endTurn } from '../actions/Game';
 
 const getGrid = (state) => {
   return {
@@ -19,7 +19,7 @@ const getGrid = (state) => {
   };
 };
 
-@connect(getGrid, {playMove, startTurn, endTurn}, null, {withRef: true})
+@connect(getGrid, {playUserMove, playComputerMove, startTurn, endTurn}, null, {withRef: true})
 export default class SquareLogic extends React.Component {
   render() {
     const row = this.props.row;
@@ -27,7 +27,8 @@ export default class SquareLogic extends React.Component {
     const position = {row, col};
     const grid = this.props.game.grid;
     const squareState = grid[row][col];
-    const playMove = this.props.playMove;
+    const playUserMove = this.props.playUserMove;
+    const playComputerMove = this.props.playComputerMove;
     const turnsRemaining = this.props.game.turnsRemaining;
     const isPlayerTurn = this.props.game.playerTurn;
 
@@ -41,7 +42,8 @@ export default class SquareLogic extends React.Component {
     
     const playComputerTurn = () => {
       // call ai logic
-      playMove(computeNextMove(this.props.grid));
+      // TODO: handle invalid moves? invalid moves cause the thing to decrement :(
+      playComputerMove(computeNextMove(grid));
     };
     
     const checkAndHandleGameEnd = () => {
@@ -60,7 +62,7 @@ export default class SquareLogic extends React.Component {
         return;
       };
 
-      playMove(position);
+      playUserMove(position);
       endTurn();
 
       if (turnsRemaining >= 2) {
