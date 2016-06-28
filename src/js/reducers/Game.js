@@ -60,6 +60,8 @@ const game = (state = initialState, action) => {
       });
     case 'END_GAME':
       return Object.assign({}, initialState, {
+    case 'END_GAME':
+      return Object.assign({}, state, {
         finished: true,
         winner: action.winner
       });
