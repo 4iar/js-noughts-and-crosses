@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 
 import Grid from '../components/Grid';
 import ResultPopup from '../containers/ResultPopup';
+import Stats from '../components/Stats';
 
 import { playMove } from '../actions/Game';
 
@@ -27,6 +28,7 @@ export default class GameLogic extends React.Component {
       <div>
         <ResultPopup />
         <Grid />
+        <Stats />
       </div>
     );
   }
