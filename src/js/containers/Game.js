@@ -6,7 +6,6 @@
 
 // TODO: 3.0 Calculate the AI move and check if winner
 import React from 'react';
-import _ from 'lodash';
 import { connect } from 'react-redux';
 
 import Grid from '../components/Grid';
