@@ -9,7 +9,12 @@ const initialState = {
   grid:
     [['', '', ''],
       ['', '', ''],
-      ['', '', '']]
+      ['', '', '']],
+  stats: {
+    win: 0,
+    draw: 0,
+    lose: 0
+  }
 };
 
 const game = (state = initialState, action) => {
@@ -71,10 +76,21 @@ const game = (state = initialState, action) => {
         player: state.player
       });
     case 'END_GAME':
-      return Object.assign({}, state, {
+      var newState = Object.assign({}, state, {
         finished: true,
-        winner: action.winner
-      });
+        winner: action.winner,
+      })
+      
+      if (!action.winner) {
+        newState.stats.draw = state.stats.draw + 1;
+      } else {
+        if (action.winner === state.player) {
+          newState.stats.win = state.stats.win + 1;
+        } else {
+          newState.stats.lose = state.stats.lose + 1;
+        };
+      };
+      return newState;
     default:
       return state;
   };

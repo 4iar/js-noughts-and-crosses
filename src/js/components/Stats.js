@@ -1,16 +1,20 @@
 import React from "react";
 import { connect } from 'react-redux';
 
-const getHistory = (state) => {
+const getStats = (state) => {
   return {
-    count: state.history.count
+    win: state.game.stats.win,
+    draw: state.game.stats.draw,
+    lose: state.game.stats.lose
   };
 };
 
-@connect(getHistory, null, null, {withRef: true})
+@connect(getStats, null, null, {withRef: true})
 export default class Stats extends React.Component {
   render() {
-    const count = this.props.count;
+    const win = this.props.win;
+    const draw = this.props.draw;
+    const lose = this.props.lose;
     
     var style = {
       fontSize: '3em',
@@ -19,7 +23,7 @@ export default class Stats extends React.Component {
 
     return (
       <div style={style} class='col-sm-6 col-sm-offset-3 text-center'>
-        <p>{count.won} - {count.draw} - {count.lost}</p>
+        <p>{win} - {draw} - {lose}</p>
       </div>
     );
   };
