@@ -17,7 +17,6 @@ export default class Popup extends React.Component {
   };
 
   closeModal() {
-    console.log(this.state.modalClosed);
     this.setState({modalClosed: true});
   };
 
@@ -41,7 +40,6 @@ export default class Popup extends React.Component {
       padding: '15px',
       boxShadow: ''
     };
-
     return (
       <div>
         <SkyLightStateless

@@ -8,7 +8,6 @@ import Game from "./containers/Game";
 const routes = (store) => {
   const forcePlayerSelect = (store) => {
     if (!store.getState().game.player) {
-      console.log("fuck");
       browserHistory.push('/');
     };
   };

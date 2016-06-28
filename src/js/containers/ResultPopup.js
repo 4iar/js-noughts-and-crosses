@@ -5,18 +5,17 @@ import { connect } from "react-redux";
 
 const getGameVariables = (state) => {
   const result = (state) => {
-    console.log(state);
     if (!state.game.player) {
       return 'draw';
-    } 
-    
+    }
+
     if (state.game.player === state.game.winner) {
       return 'win';
     } else {
       return 'lose';
     }
   };
-  
+
   return {
     finished: state.game.finished,
     result: result(state)
@@ -31,7 +30,7 @@ export default class ResultPopup extends React.Component {
     draw: "Draw",
     lose: "Lose",
   }
-  
+
   getMessage() {
     return this.messages[this.props.result]
   }

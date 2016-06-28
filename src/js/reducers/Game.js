@@ -17,12 +17,12 @@ const game = (state = initialState, action) => {
     case 'PLAY_USER_MOVE':
       var row = action.position.row;
       var col = action.position.col;
-      
+
       // ignore the play if the square is occupied
       if (state.grid[row][col]) {
         return state;
       }
-      
+
       var newGrid = state.grid.slice();
       var newTurnsRemaining = state.turnsRemaining - 1;
       newGrid[row][col] = state.player;
@@ -33,12 +33,12 @@ const game = (state = initialState, action) => {
     case 'PLAY_COMPUTER_MOVE':
       var row = action.position.row;
       var col = action.position.col;
-      
+
       // ignore the play if the square is occupied
       if (state.grid[row][col]) {
         return state;
       }
-      
+
       var newGrid = state.grid.slice();
       var newTurnsRemaining = state.turnsRemaining - 1;
       newGrid[row][col] = {o: 'x', x: 'o'}[state.player];

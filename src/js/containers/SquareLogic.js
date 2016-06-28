@@ -51,7 +51,7 @@ export default class SquareLogic extends React.Component {
 
     const checkAndHandleGameEnd = () => {
       const winner = checkIfWinner(grid);
-      
+
       if (turnsRemaining === 1 || winner) {
         endGame(winner);
         return;
@@ -63,7 +63,7 @@ export default class SquareLogic extends React.Component {
         resetGame();
         return;
       }
-      
+
       if (!isValidMove()) {
         return;
       };
