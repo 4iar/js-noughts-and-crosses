@@ -10,7 +10,7 @@ export default class StartGame extends React.Component {
     const setPlayer = this.props.setPlayer;
     
     const style = {
-      marginTop: '20%',
+      marginTop: '5%',
       background: 'transparent'
     }
 
@@ -23,18 +23,18 @@ export default class StartGame extends React.Component {
     }
 
     return (
-      <div style={style} class="jumbotron col-sm-6 col-sm-offset-3 text-center">
+      <div style={style} class="row jumbotron text-center">
         <div class="col-sm-12">
           <h3>Player</h3>
         </div>
         
-        <div class="col-sm-6">
+        <div class="col-md-offset-5 col-sm-1">
           <Link to="/play">
             <h1 onClick={setPlayerCross}>X</h1>
           </Link>
           </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-1">
           <Link to="/play">
             <h1 onClick={setPlayerNought}>O</h1>
           </Link>
