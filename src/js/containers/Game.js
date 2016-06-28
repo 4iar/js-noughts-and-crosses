@@ -10,6 +10,8 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 
 import Grid from '../components/Grid';
+import ResultPopup from '../containers/ResultPopup';
+
 import { playMove } from '../actions/Game';
 
 const getGrid = (state) => {
@@ -21,8 +23,11 @@ const getGrid = (state) => {
 @connect(getGrid, null, null, {withRef: true})
 export default class GameLogic extends React.Component {
   render() {
-    return (
-      <Grid />
+   return (
+      <div>
+        <ResultPopup />
+        <Grid />
+      </div>
     );
   }
 }
