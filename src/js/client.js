@@ -8,9 +8,8 @@ import { Provider } from "react-redux";
 import routes from "./routes";
 
 import game from './reducers/Game';
-import history from './reducers/History';
 
-const reducer = combineReducers({game, history});
+const reducer = combineReducers({game});
 const store = createStore(reducer);
 
 const app = document.getElementById('app');
