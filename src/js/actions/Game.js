@@ -33,9 +33,9 @@ export function endTurn() {
   }
 }
 
-export function reset() {
+export function resetGame() {
   return {
-    type: 'RESET'
+    type: 'RESET_GAME'
   };
 };
 

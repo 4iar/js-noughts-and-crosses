@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import checkIfWinner from '../checkIfWinner';
 import computeNextMove from '../computeNextMove';
 import Square from '../components/Square';
-import { endGame, playUserMove, playComputerMove, startTurn, endTurn } from '../actions/Game';
+import { resetGame, endGame, playUserMove, playComputerMove, startTurn, endTurn } from '../actions/Game';
 
 const getGrid = (state) => {
   return {
@@ -19,7 +19,7 @@ const getGrid = (state) => {
   };
 };
 
-@connect(getGrid, {endGame, playUserMove, playComputerMove, startTurn, endTurn}, null, {withRef: true})
+@connect(getGrid, {resetGame, endGame, playUserMove, playComputerMove, startTurn, endTurn}, null, {withRef: true})
 export default class SquareLogic extends React.Component {
   render() {
     const row = this.props.row;
@@ -33,6 +33,7 @@ export default class SquareLogic extends React.Component {
     const turnsRemaining = this.props.game.turnsRemaining;
     const isPlayerTurn = this.props.game.playerTurn;
     const gameNotFinished = !this.props.game.finished;
+    const resetGame = this.props.resetGame;
 
     const squareNotOccupied = () => {
       return !squareState;
@@ -58,6 +59,11 @@ export default class SquareLogic extends React.Component {
     };
 
     const handleClick = () => {
+      if (!gameNotFinished) {
+        resetGame();
+        return;
+      }
+      
       if (!isValidMove()) {
         return;
       };

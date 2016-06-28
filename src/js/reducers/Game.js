@@ -58,8 +58,18 @@ const game = (state = initialState, action) => {
       return Object.assign({}, state, {
         playerTurn: false
       });
-    case 'END_GAME':
-      return Object.assign({}, initialState, {
+    case 'RESET_GAME':
+      return Object.assign({}, state, {
+        finished: false,
+        winner: '',
+        playerTurn: true,
+        turnsRemaining: 9,
+        grid:
+          [['', '', ''],
+            ['', '', ''],
+            ['', '', '']],
+        player: state.player
+      });
     case 'END_GAME':
       return Object.assign({}, state, {
         finished: true,

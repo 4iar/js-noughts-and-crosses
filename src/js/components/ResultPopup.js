@@ -9,6 +9,12 @@ export default class Popup extends React.Component {
       modalClosed: false
     };
   }
+  
+  componentWillReceiveProps() {
+    if (!this.props.finished) {
+      this.setState({modalClosed: false});
+    };
+  };
 
   closeModal() {
     console.log(this.state.modalClosed);
